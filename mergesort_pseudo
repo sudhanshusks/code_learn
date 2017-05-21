@@ -1,0 +1,30 @@
+function mergesort(arr[] , left, right)   // all indexes are from 0 to n-1
+	if(left < right)
+		middle=(left+right)/2;
+		mergesort(arr, left, middle);
+		mergesort(arr, middle+1 , right);
+		merge(arr, left, middle, right);
+		end
+end
+
+function merge(arr[] , left, middle, right)
+	n1=middle-left+1;   // include both middle and left element
+	n2=right - middle;
+	L[n1]=arr[left] to arr[middle];
+	R[n2]=arr[middle+1] to arr[right];
+	i=left;
+	j=middle+1;
+	k=left;
+	while(k < n1+n2)
+		if(j==n2 || L[i] <=R[j] )
+			arr[k]=L[i];
+			k++;
+			i++;
+		end
+		if(i==n1 || L[i]> R[j])
+			arr[k]=R[j];
+			k++;
+			j++;
+		end
+	end
+end

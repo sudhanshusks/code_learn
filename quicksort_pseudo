@@ -1,0 +1,20 @@
+function quicksort(arr[] , low, high)
+	if(low < high)
+		pi=partition(arr, low , high);
+		quicksort(arr,low, pi-1);
+		quicksort(arr, pi+1, high);
+		end
+end
+
+function partition (arr[] , low , high)
+	pivot=arr[high];
+	i= low-1;
+	for(int j=0;j<=high;j++)
+		if(arr[j] <= pivot)
+			i++;
+			swap(arr[j], arr[i]);
+		end
+	end
+	swap(arr[i+1] , arr[high]);
+return (i+1);
+end
